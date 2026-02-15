@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samuel Müller – Projekte</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header>
+  <h1 class="neon-header">Samuel Müller</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projekte</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html">Kontakt</a>
+  </nav>
+</header>
+
+<section class="projects-section">
+  <h2 class="section-title">Meine Projekte</h2>
+
+  <div class="filter-buttons">
+    <button data-filter="all" class="active">Alle</button>
+    <button data-filter="html">HTML</button>
+    <button data-filter="js">JavaScript</button>
+    <button data-filter="react">React</button>
+  </div>
+
+  <div class="projects-grid">
+    <div class="project-card" data-category="html" data-title="Mini-Website" data-desc="HTML/CSS Projekt. GitHub: <a href='https://github.com/samu480' target='_blank'>Link</a>">
+      <img src="assets/images/placeholder1.png" alt="Mini-Website">
+      <h3>Mini-Website</h3>
+    </div>
+
+    <div class="project-card tilt" data-category="js" data-title="JS Spiel" data-desc="Interaktives JS Spiel. GitHub: <a href='https://github.com/samu480' target='_blank'>Link</a>">
+  <img src="assets/images/placeholder2.png" alt="JS Spiel">
+  <h3>JS Spiel</h3>
+</div>
+
+    <div class="project-card" data-category="react" data-title="React Portfolio" data-desc="React Projekt mit Routing & Animationen. GitHub: <a href='https://github.com/samu480' target='_blank'>Link</a>">
+      <img src="assets/images/placeholder3.png" alt="React Portfolio">
+      <h3>React Portfolio</h3>
+    </div>
+  </div>
+</section>
+
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <h3 id="modal-title"></h3>
+    <p id="modal-desc"></p>
+    <button class="modal-close" id="modal-close">Schließen</button>
+  </div>
+</div>
+
+<footer>
+  &copy; 2026 Samuel Müller
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
+<script src="assets/js/particles.js"></script>

@@ -1,0 +1,144 @@
+:root {
+  --color-bg: #0b0b14;
+  --color-text: #fff;
+  --color-accent: #ff00ff;
+  --color-accent2: #00f0ff;
+  --color-card-bg: #222;
+  --color-card-hover: rgba(255,0,255,0.5);
+}
+
+body { margin:0; padding:0; font-family:'Roboto',sans-serif; background: var(--color-bg); color: var(--color-text); }
+
+/* Header */
+header { position:fixed; top:0; left:0; width:100%; background:rgba(15,15,21,0.95); display:flex; justify-content:space-between; padding:20px 50px; z-index:1000;}
+header h1 { color: var(--color-accent); font-family:'Orbitron',sans-serif; font-size:28px;}
+nav a { margin-left:20px; color: var(--color-text); text-decoration:none; transition:0.3s;}
+nav a:hover { color: var(--color-accent); }
+
+/* Intro */
+.intro { min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding-top:80px; }
+.intro h2 { font-size:60px; color: var(--color-accent); text-shadow:0 0 10px var(--color-accent),0 0 20px var(--color-accent2); animation: glow 2s ease-in-out infinite alternate; margin-bottom:20px; }
+.intro p { font-size:22px; max-width:700px; color:#ccc; }
+
+/* About */
+.about-home { max-width:900px; margin:50px auto; padding:50px; background:#111; border-radius:20px; opacity:0; transform:translateY(50px); transition:all 1s ease-out; }
+.about-home.visible { opacity:1; transform:translateY(0); }
+
+/* Footer */
+footer { text-align:center; padding:30px; color:#888; text-shadow:0 0 5px var(--color-accent); }
+
+/* Neon Glow */
+@keyframes glow { 0% { text-shadow:0 0 5px var(--color-accent),0 0 10px var(--color-accent2);} 50% { text-shadow:0 0 20px var(--color-accent),0 0 40px var(--color-accent2);} 100% { text-shadow:0 0 5px var(--color-accent),0 0 10px var(--color-accent2);} }
+
+/* Projekte */
+.projects-section { padding:120px 50px; min-height:100vh; text-align:center; }
+.section-title { font-family:'Orbitron',sans-serif; font-size:40px; color:var(--color-accent); margin-bottom:40px; }
+.filter-buttons { margin-bottom:30px; }
+.filter-buttons button { padding:10px 20px; margin:5px; border:none; border-radius:12px; cursor:pointer; background:#222; color:#fff; transition:0.3s; }
+.filter-buttons button:hover, .filter-buttons button.active { background: var(--color-accent); color:#fff; }
+.projects-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; }
+.project-card { background: var(--color-card-bg); border-radius:20px; padding:20px; cursor:pointer; transition:transform 0.3s, box-shadow 0.3s; }
+.project-card:hover { transform:scale(1.05); box-shadow:0 0 25px var(--color-card-hover);}
+.project-card img { width:100%; border-radius:15px; margin-bottom:15px; }
+.project-card h3 { color: var(--color-accent); }
+
+/* Modal */
+.modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); justify-content:center; align-items:center; z-index:2000; }
+.modal-content { background:#111; padding:50px; border-radius:20px; max-width:700px; text-align:center; box-shadow:0 0 50px var(--color-card-hover);}
+.modal-content h3 { color: var(--color-accent); margin-bottom:15px; }
+.modal-content p { color:#ccc; font-size:16px; margin-bottom:20px; }
+.modal-close { padding:12px 25px; border:none; border-radius:12px; background:var(--color-accent2); color:#111; font-weight:bold; cursor:pointer; transition:0.3s; }
+.modal-close:hover { background: var(--color-accent); color:#fff; }
+/* === Skills Section === */
+.skills-section { padding:120px 50px; min-height:100vh; text-align:center; }
+.skill { margin:30px auto; max-width:700px; text-align:left; }
+.skill h3 { color: var(--color-accent); margin-bottom:10px; font-family:'Orbitron',sans-serif; }
+.skill-bar { background:#222; border-radius:20px; overflow:hidden; height:30px; }
+.skill-fill { height:100%; width:0; background: linear-gradient(90deg, var(--color-accent), var(--color-accent2)); border-radius:20px; transition: width 2s ease-in-out; }
+/* === Kontakt-Seite === */
+.contact-section { padding:120px 50px; min-height:100vh; text-align:center; }
+.contact-info p { color:#ccc; font-size:18px; margin-bottom:10px; }
+.contact-info a { color: var(--color-accent2); text-decoration:none; transition:0.3s; }
+.contact-info a:hover { color: var(--color-accent); }
+
+.contact-form { margin:50px auto; max-width:500px; display:flex; flex-direction:column; gap:20px; }
+.contact-form input, .contact-form textarea { padding:15px; border:none; border-radius:12px; font-size:16px; outline:none; }
+.contact-form input { background:#222; color:#fff; }
+.contact-form textarea { background:#222; color:#fff; resize:none; }
+.contact-form button { padding:15px; border:none; border-radius:12px; background: var(--color-accent); color:#111; font-weight:bold; cursor:pointer; transition:0.3s; }
+.contact-form button:hover { background: var(--color-accent2); color:#fff; }
+#formMessage { color: var(--color-accent2); margin-top:10px; font-weight:bold; }
+/* Partikel-Hintergrund */
+#particleCanvas {
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Alle Sections etwas über dem Hintergrund */
+header, .intro, .about-home, .projects-section, .skills-section, .contact-section, footer{
+  position: relative;
+  z-index: 1;
+}
+.skill h3 .icon {
+  margin-left:10px;
+  animation: glowIcon 2s infinite alternate;
+}
+@keyframes glowIcon {
+  0% { text-shadow: 0 0 5px var(--color-accent); }
+  50% { text-shadow: 0 0 20px var(--color-accent2); }
+  100% { text-shadow: 0 0 5px var(--color-accent); }
+}
+/* Neon Header Animation */
+.neon-header {
+  color: var(--color-accent);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 32px;
+  text-shadow:
+    0 0 5px var(--color-accent),
+    0 0 10px var(--color-accent2),
+    0 0 20px var(--color-accent),
+    0 0 40px var(--color-accent2);
+  animation: flicker 3s infinite;
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity:1; }
+  20%, 22%, 24%, 55% { opacity:0.4; }
+}
+.project-card.tilt {
+  perspective: 1000px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+/* Neon Intro Buchstaben Animation */
+.neon-intro {
+  font-family:'Orbitron', sans-serif;
+  font-size:60px;
+  color: var(--color-accent);
+  display:inline-block;
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+.neon-intro span {
+  display:inline-block;
+  opacity:0;
+  transform: translateY(-50px);
+  animation: neonFlyIn 0.6s forwards;
+}
+
+@keyframes neonFlyIn {
+  0% { opacity:0; transform: translateY(-50px); text-shadow:0 0 5px var(--color-accent);}
+  100% { opacity:1; transform: translateY(0); text-shadow:0 0 15px var(--color-accent),0 0 30px var(--color-accent2);}
+}
+.project-card, .skill { opacity:0; transform:translateY(50px); transition:all 0.8s ease-out;}
+.project-card.visible, .skill.visible { opacity:1; transform:translateY(0);}
+.hover-glow {
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  border-radius:20px;
+  box-shadow:0 0 30px var(--color-accent);
+  pointer-events:none;
+  animation: glowFade 0.5s forwards;
+}
+@keyframes glowFade { 0% {opacity:1;} 100%{opacity:0;} }
